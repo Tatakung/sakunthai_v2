@@ -12,7 +12,7 @@ cloudinary.config({
 exports.showTest = async (req, res) => {
   try {
     const data = await prisma.category.findMany(); // ✅ เรียกผ่าน instance
-    res.status(200).json({ data });
+    res.status(200).json(data) ; 
   } catch (err) {
     console.error("Error fetching categories:", err);
     res.status(500).json({ error: "Failed to fetch categories" });
